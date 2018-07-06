@@ -10,8 +10,9 @@ Literature directory hosted on Heroku aimed at allowing users to keep track of t
 
 * HTML
 * CSS
+* Node.js
 * Express
-* MongoDB
+* MongoDB/Mongoose
 * Heroku
 * Full CRUD
 * All 7 RESTful Routes
