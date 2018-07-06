@@ -1,4 +1,4 @@
-# bookshelf
+# bookshelf.
 
 Check it out [here](https://still-spire-94893.herokuapp.com/) 
 
