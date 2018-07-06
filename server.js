@@ -19,6 +19,13 @@ app.use(express.urlencoded({extended:true}));
 const booksController = require('./controllers/books.js')
 app.use(booksController)
 
+
+// localhost:3000  - this will reroute to `books`
+app.get('/', (req, res)=>{
+  res.redirect('/books')
+  })
+
+
 //connect to mongoose
 mongoose.connect(mongoUri, {useNewUrlParser: true});
 mongoose.connection.on('open', ()=>{
