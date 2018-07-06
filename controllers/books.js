@@ -19,6 +19,7 @@ const Books = require('../models/books.js')
 // Index  : GET    '/books'          1/7
 router.get('/books', (req, res)=>{
   Books.find({}, (err, allBooks) =>{
+    // res.send(allBooks)
     res.render('books/index.ejs', {books: allBooks})
   })
 })
