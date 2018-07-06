@@ -6,13 +6,14 @@ const Books = require('../models/books.js')
 
 // ___________________
 // 7 Restful Routes
+// (via Karolin Rafalski)
 // ___________________
-// Index  : GET    '/products'          1/7
-// Show   : GET    '/products/:id'      2/7
-// New    : GET    '/prodcuts/new'      3/7
-// Create : POST   '/products'          4/7
-// Edit   : GET    '/products/:id/edit' 5/7
-// Update : PUT    '/products/:id'      6/7
+// Index  : GET    '/books'          1/7 *
+// Show   : GET    '/books/:id'      2/7
+// New    : GET    '/books/new'      3/7 *
+// Create : POST   '/books'          4/7
+// Edit   : GET    '/books/:id/edit' 5/7
+// Update : PUT    '/books/:id'      6/7
 
 
 
@@ -25,7 +26,10 @@ router.get('/books', (req, res)=>{
 })
 
 
-
+// New    : GET    '/prodcuts/new'      3/7
+router.get('/books/new', (req, res)=>{
+  res.render('books/new.ejs')
+})
 
 
 module.exports = router
