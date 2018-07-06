@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 //for mongoose
 const mongoose = require('mongoose')
-const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_app_dev';
+const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/bookshelfapp';
 
 //Middleware - Body Parser
 app.use(express.urlencoded({extended:true}));
@@ -15,18 +15,20 @@ app.use(express.urlencoded({extended:true}));
 // app.use(express.static('public'))
 
 
-// use controllers/books.js
+// Use controllers/books.js
 const booksController = require('./controllers/books.js')
 app.use(booksController)
-
-
-//PORT
-app.listen(PORT, ()=>{
-  console.log('listening....');
-})
 
 //connect to mongoose
 mongoose.connect(mongoUri, {useNewUrlParser: true});
 mongoose.connection.on('open', ()=>{
   console.log('connected to mongoose!!!!!!!!!!!');
 })
+
+//PORT
+app.listen(PORT, ()=>{
+  console.log('listening....');
+})
+
+
+// CODE GRAVEYARD

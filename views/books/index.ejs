@@ -10,10 +10,19 @@
     <h1>Index Page</h1>
     <!-- main div -->
     <div id='main'>
-    </div>
-      main
-    <div class='bookCard'>
-      book
+        <% for(let i =0; i > books.length; i++) { %>
+          <div class='bookCard'>
+          <li>
+            <div class='bookTitle'><%=books.title %></div>
+            <br />
+            <div class='bookAuthor'><%=books.author %></div>
+            <br />
+            <div class='bookImg'><img src='<%=books.img %>'></div>
+            <br />
+            <div class='bookSynopsis'><%=books.synopsis %></div>
+          </li>
+        <% } %>
+      </div>
     </div>
     <!-- footer partial -->
   </body>
