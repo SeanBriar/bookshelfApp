@@ -11,7 +11,7 @@ const Books = require('../models/books.js')
 // Index  : GET    '/books'          1/7 *
 // Show   : GET    '/books/:id'      2/7
 // New    : GET    '/books/new'      3/7 *
-// Create : POST   '/books'          4/7
+// Create : POST   '/books          4/7
 // Edit   : GET    '/books/:id/edit' 5/7
 // Update : PUT    '/books/:id'      6/7
 
@@ -31,5 +31,11 @@ router.get('/books/new', (req, res)=>{
   res.render('books/new.ejs')
 })
 
+// Create : POST   '/books'          4/7
+router.post('/books', (req, res)=>{
+  Books.create(req.body, (err, createdBook)=>{
+    res.redirect('/books')
+  })
+})
 
 module.exports = router
