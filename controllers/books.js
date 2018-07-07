@@ -11,7 +11,7 @@ const Books = require('../models/books.js')
 // Index  : GET    '/books'          1/7 *
 // Show   : GET    '/books/:id'      2/7
 // New    : GET    '/books/new'      3/7 *
-// Create : POST   '/books          4/7
+// Create : POST   '/books           4/7 *
 // Edit   : GET    '/books/:id/edit' 5/7
 // Update : PUT    '/books/:id'      6/7
 
@@ -37,5 +37,14 @@ router.post('/books', (req, res)=>{
     res.redirect('/books')
   })
 })
+
+// Show   : GET    '/books/:id'      2/7
+router.get('/books/:id', (req, res)=>{
+  Books.findById(req.params.id, (err, foundBook)=>{
+    res.render('books/show.ejs', {books: foundBook})
+  })
+})
+
+
 
 module.exports = router
