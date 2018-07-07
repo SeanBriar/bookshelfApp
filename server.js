@@ -1,18 +1,17 @@
 const express = require('express')
-// const methodOverride = require('methodOverride')
 const app = express()
 //for heroku port
 const PORT = process.env.PORT || 3000;
-
-
 //for mongoose
 const mongoose = require('mongoose')
 const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/bookshelfapp';
+//methodOverride
+const methodOverride = require('method-override')
 
 //Middleware - Body Parser
 app.use(express.urlencoded({extended:true}));
-// app.use(methodOverride('_method'));
-// app.use(express.static('public'))
+app.use(express.static('public'))
+app.use(methodOverride('_method'));
 
 
 // Use controllers/books.js

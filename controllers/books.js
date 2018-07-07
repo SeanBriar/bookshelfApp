@@ -9,11 +9,12 @@ const Books = require('../models/books.js')
 // (via Karolin Rafalski)
 // ___________________
 // Index  : GET    '/books'          1/7 *
-// Show   : GET    '/books/:id'      2/7
+// Show   : GET    '/books/:id'      2/7 *
 // New    : GET    '/books/new'      3/7 *
 // Create : POST   '/books           4/7 *
-// Edit   : GET    '/books/:id/edit' 5/7
+// Edit   : GET    '/books/:id/edit' 5/7 *
 // Update : PUT    '/books/:id'      6/7
+// Delete : DELETE '/products/:id'   7/7
 
 
 
@@ -44,6 +45,28 @@ router.get('/books/:id', (req, res)=>{
     res.render('books/show.ejs', {books: foundBook})
   })
 })
+
+// Edit   : GET    '/books/:id/edit' 5/7
+router.get('/books/:id/edit', (req, res)=>{
+  Books.findById(req.params.id, (err, foundBook)=>{
+    res.render('books/edit.ejs', {books: foundBook})
+  })
+})
+
+// Update : PUT    '/books/:id'      6/7
+// the second part to 'edit' - needed to submit changes to database
+router.put('/books/:id', (req, res)=>{
+  // findByIdAndUpdate(<filter>, <update>, <options>)
+  Books.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updateModel)=>{
+    res.redirect('/books')
+  })
+})
+
+
+
+
+
+
 
 
 
