@@ -1,3 +1,4 @@
+
 const express = require('express')
 const router = express.Router()
 const Books = require('../models/books.js')
@@ -13,7 +14,7 @@ const Books = require('../models/books.js')
 // New    : GET    '/books/new'      3/7 *
 // Create : POST   '/books           4/7 *
 // Edit   : GET    '/books/:id/edit' 5/7 *
-// Update : PUT    '/books/:id'      6/7
+// Update : PUT    '/books/:id'      6/7 *
 // Delete : DELETE '/products/:id'   7/7
 
 
@@ -62,9 +63,12 @@ router.put('/books/:id', (req, res)=>{
   })
 })
 
-
-
-
+// Delete : DELETE '/products/:id'   7/7
+router.delete('/books/:id', (req, res)=>{
+  Books.findByIdAndRemove(req.params.id, (err, data)=>{
+    res.redirect('/books')
+  })
+})
 
 
 
