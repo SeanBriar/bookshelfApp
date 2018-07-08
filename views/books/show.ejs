@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title></title>
+      <% include ../partials/head.ejs %>
+    <title>bookshelf.</title>
   </head>
   <body>
-    <h2><%=books.title%></h2>
-    <h3><img src='<%=books.img%>'></h3>
-    <h3>Author: <%=books.author%></h3>
-    <h3>Synopsis: <%=books.synopsis%></h3>
+    <% include ../partials/nav.ejs %>
+    <h3><%=books.title%></h3>
+    <img src='<%=books.img%>'>
+    <h5>Author:</h5> <%=books.author%>
+    <h5>Synopsis:</h5> <%=books.synopsis%>
+    <br />
     <a href="/books/<%=books.id; %>/edit"><button>Edit</button></a>
     <br />
     <form action="/books/<%=books.id%>?_method=DELETE" method="POST">

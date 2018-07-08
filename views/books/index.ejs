@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>bookshelf.</title>
+    <% include ../partials/head.ejs %>
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
+    <!-- app.js -->
+    <script src="js/app.js" charset="utf-8"></script>
+    <!-- materialize cdn JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
   </head>
   <body>
-    <!-- header partial -->
-    <!-- nav partial?  -->
-    <h1>Index Page</h1>
+    <!-- nav partial -->
+    <% include ../partials/nav.ejs %>
     <!-- main div -->
-    <div id='main'>
-      <a href='/books/new'><button>Add Book</button></a>
-        <% for(let i = 0; i < books.length; i++) { %>
-          <div class='bookCard'>
+    <div class='container'>
+      <div class='carousel-container'>
 
-            <a href='/books/<%=books[i].id%>'><%=books[i].title %></a>
-            <br />
-            <%=books[i].author %>
-            <br />
-            <img src='<%=books[i].img %>'>
-            <br />
-            <%=books[i].synopsis %>
+        <div class='carousel-button previous'>
+          <button class='carousel-button previous'><</button>
+        </div>
+
+        <div class='carousel-images'>
+
+
+            <% for(let i = 0; i < books.length; i++) { %>
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="<%=books[i].img %>">
           </div>
-          <br />
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">...</i></span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"><%=books[i].title%><i class="material-icons right">X</i></span>
+            <p><%=books[i].synopsis%></p>
+            <p><a href='/books/<%=books[i].id%>'>Learn more about this title</a></p>
+          </div>
+        </div>
         <% } %>
+
+      </div>
+
+
+        <div class='carousel-button next'>
+          <button class='carousel-button next'>></button>
+        </div>
+      </div>
     </div>
     <!-- footer partial -->
   </body>
