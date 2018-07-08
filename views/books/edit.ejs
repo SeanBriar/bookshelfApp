@@ -5,7 +5,8 @@
     <title>Edit a Book Entry</title>
   </head>
   <body>
-    <% include ../partials/nav.ejs %>
+  <% include ../partials/nav.ejs %>
+  <div class='container'>
     <h1>Edit a Book Entry</h1>
     <form action='/books/<%=books.id%>?_method=PUT' method='POST'>
       Title: <input type='text' name='title' value='<%=books.title%>'><br />
@@ -14,5 +15,7 @@
       Synopsis: <textarea type='text' name='synopsis'><%=books.synopsis%></textarea>
       <button>Submit Changes</button>
     </form>
+
+  </div>
   </body>
 </html>

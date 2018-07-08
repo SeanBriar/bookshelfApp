@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-      <% include ../partials/head.ejs %>
-    <title>bookshelf.</title>
+    <% include ../partials/head.ejs %>
   </head>
   <body>
+    <!-- nav partial -->
     <% include ../partials/nav.ejs %>
-    <h3><%=books.title%></h3>
-    <img src='<%=books.img%>'>
-    <h5>Author:</h5> <%=books.author%>
-    <h5>Synopsis:</h5> <%=books.synopsis%>
-    <br />
-    <a href="/books/<%=books.id; %>/edit"><button>Edit</button></a>
-    <br />
-    <form action="/books/<%=books.id%>?_method=DELETE" method="POST">
-      <button>Remove</button>
-    </form>
+    <!-- main div -->
+    <div class='main'>
+      <div class="aside">
+        <% include ../partials/aside.ejs %>
+      </div>
+      <div class='container'>
+        <div class='card showPageCard'>
+          <h3><%=books.title%></h3>
+          <img src='<%=books.img%>'>
+          <h3>Author:</h3> <%=books.author%>
+          <h3>Synopsis:</h3><%=books.synopsis%>
+          <br />
+        </div>
+      </div>
+        <a href="/books/<%=books.id; %>/edit"><button>Edit</button></a>
+        <form action="/books/<%=books.id%>?_method=DELETE" method="POST">
+          <button>Remove</button>
+        </form>
+
+    </div>
   </body>
 </html>

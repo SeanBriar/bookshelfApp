@@ -2,20 +2,28 @@
 <html lang="en" dir="ltr">
   <head>
     <% include ../partials/head.ejs %>
-    <title>Add New Book</title>
   </head>
   <body>
     <% include ../partials/nav.ejs %>
-    <h1>Add New Book</h1>
-    <form action='/books' method='POST'>
-      Title: <input type='text' name='title' />
-      <br />
-      Author: <input type='text' name='author' />
-      <br />
-      Image: <input type='text' name='img' />
-      <br />
-      Synopsis: <textarea type='text' name='synopsis'></textarea>
-      <button>Add Book</button>
-    </form>
+    <div class='main'>
+      <div class='aside'>
+        <% include ../partials/aside.ejs %>
+      </div>
+      <div class='container'>
+        <h4>Add New Book</h4>
+        <form action='/books' method='POST'>
+          Title: <input type='text' name='title' />
+          <br />
+          Author: <input type='text' name='author' />
+          <br />
+          Image: <input type='text' name='img' />
+          <br />
+          Synopsis:
+          <textarea type='text' name='synopsis'></textarea>
+          <br />
+          <button>Add Book</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
