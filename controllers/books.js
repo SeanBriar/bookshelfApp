@@ -40,6 +40,11 @@ router.post('/books', (req, res)=>{
   })
 })
 
+//About page
+router.get('/books/about', (req, res)=>{
+  res.render('books/about.ejs')
+})
+
 // Show   : GET    '/books/:id'      2/7
 router.get('/books/:id', (req, res)=>{
   Books.findById(req.params.id, (err, foundBook)=>{
@@ -69,9 +74,6 @@ router.delete('/books/:id', (req, res)=>{
     res.redirect('/books')
   })
 })
-
-
-
 
 
 module.exports = router

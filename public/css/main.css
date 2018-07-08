@@ -8,8 +8,17 @@ nav {
   text-align: center;
   background-color: #284B63;
   color: #D9D9D9;
+  height: 100px;
 }
 
+h1 {
+  padding-top: 20px;
+}
+
+.nav:hover {
+  border: 1px solid #B0BDC6;
+
+}
 /* === aside === */
 .nav-links {
   border: 2px solid #284B63;
@@ -22,7 +31,7 @@ nav {
 }
 
 .nav {
-  padding: 0 10px 0 10px;
+  padding: 0px 7px 7px 7px;
   color: #284B63;
   text-decoration: none;
 }
@@ -30,25 +39,75 @@ nav {
 /* ==== main container === */
 .main {
   display: flex;
+  padding-top: 20px;
 }
 
 .container {
+  margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .bookImg {
   width: 200px;
-  height: 350px;
+  height: 325px;
 }
 
 /* === cards ===*/
-.showPageCard {
-  max-width: 300px;
-  border: 2px solid #284B63;
+/* .showPageCard {
+  max-width: 500px;
+  border: 2px solid #B0BDC6;
+} */
+
+.card {
+  margin: 5px;
+  max-width: 500px;
+  border: 2px solid #B0BDC6;
 }
 
-h3 {
+h4 {
   margin: 0;
+}
+form {
+  margin: 0;
+}
+.showbts {
+  display: flex;
+  flex-direction: row;
+}
+
+.innerCard {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.bookInfo {
+  margin: 10px;
+}
+
+
+/* === about page === */
+
+.aboutInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 30px;
+
+}
+.catPic {
+  width: 360px;
+  height: 225px;
+}
+
+.aboutP {
+  width: 400px;
+}
+
+/* === show page === */
+
+.removeBtn {
+  margin-left: 10px;
 }

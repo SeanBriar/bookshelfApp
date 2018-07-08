@@ -7,15 +7,15 @@
   <body>
   <% include ../partials/nav.ejs %>
   <div class='container'>
-    <h1>Edit a Book Entry</h1>
+    <% include ../partials/aside.ejs %>
+    <h4>Edit a Book Entry</h4>
     <form action='/books/<%=books.id%>?_method=PUT' method='POST'>
       Title: <input type='text' name='title' value='<%=books.title%>'><br />
       Author: <input type='text' name='author' value='<%=books.author%>'><br />
       Book Cover Image: <input type='text' name='img' value='<%=books.img%>'><br />
-      Synopsis: <textarea type='text' name='synopsis'><%=books.synopsis%></textarea>
+      Synopsis: <input type='text' name='synopsis' value='<%=books.synopsis%>'><br />
       <button>Submit Changes</button>
     </form>
-
   </div>
   </body>
 </html>

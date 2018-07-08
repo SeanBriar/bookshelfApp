@@ -10,19 +10,20 @@
         <% include ../partials/aside.ejs %>
       </div>
       <div class='container'>
-        <h4>Add New Book</h4>
-        <form action='/books' method='POST'>
-          Title: <input type='text' name='title' />
-          <br />
-          Author: <input type='text' name='author' />
-          <br />
-          Image: <input type='text' name='img' />
-          <br />
-          Synopsis:
-          <textarea type='text' name='synopsis'></textarea>
-          <br />
-          <button>Add Book</button>
-        </form>
+        <div class='card newCard'>
+          <h4>Add New Book</h4>
+          <form action='/books' method='POST'>
+            Title: <input type='text' name='title' />
+            <br />
+            Author: <input type='text' name='author' />
+            <br />
+            Image: <input type='text' name='img' />
+            <br />
+            Synopsis: <input type='text' name='synopsis' />
+            <br />
+            <button>Add Book</button>
+          </form>
+        </div>
       </div>
     </div>
   </body>
