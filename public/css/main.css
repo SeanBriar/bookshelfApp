@@ -22,6 +22,7 @@ h1 {
 /* === aside === */
 .nav-links {
   border: 2px solid #284B63;
+  border-radius: 5px;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
@@ -55,10 +56,6 @@ h1 {
 }
 
 /* === cards ===*/
-/* .showPageCard {
-  max-width: 500px;
-  border: 2px solid #B0BDC6;
-} */
 
 .card {
   margin: 5px;
@@ -72,10 +69,12 @@ h4 {
 form {
   margin: 0;
 }
-.showbts {
+.showBtns {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
+
 
 .innerCard {
   display: flex;
@@ -110,4 +109,8 @@ form {
 
 .removeBtn {
   margin-left: 10px;
+}
+
+.purchaseBtn {
+  margin: 0 20px 0 10px;
 }

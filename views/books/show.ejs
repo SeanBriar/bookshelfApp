@@ -15,7 +15,7 @@
         <div class='card showPageCard'>
           <h3 style="text-decoration:underline"><%=books.title%></h3>
           <div class='innerCard'>
-            <img src='<%=books.img%>'>
+            <img class='bookImg' src='<%=books.img%>'>
             <div class='bookInfo'>
               <h4>Author:</h4> <%=books.author%>
               <h4>Synopsis:</h4><%=books.synopsis%>
@@ -23,7 +23,14 @@
           </div>
           <div class='showBtns'>
             <a href="/books/<%=books.id; %>/edit"><button>Edit</button></a>
-
+            <div class='purchaseIcons'>
+              <!-- amazon icon -->
+              <a class='purchaseBtn' style='text-decoration:none' href='#'><i class="fa fa-amazon" style="font-size:36px;color:#284B63"></i></a>
+              <!-- google icon -->
+              <a class='purchaseBtn' style='text-decoration:none' href='#'><i class="fa fa-google" style="font-size:36px;color:#284B63"></i></a>
+              <!-- apple icon -->
+              <a class='purchaseBtn' style='text-decoration:none' href='#'><i class="fa fa-apple" style="font-size:36px;color:#284B63"></i></a>
+            </div>
           </div>
         </div>
         <form action="/books/<%=books.id%>?_method=DELETE" method="POST">
