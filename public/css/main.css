@@ -8,7 +8,7 @@ nav {
   text-align: center;
   background-color: #284B63;
   color: #D9D9D9;
-  height: 100px;
+  height: 120px;
 }
 
 .nav-wrapper {
@@ -19,10 +19,11 @@ nav {
 
 h1 {
   padding-top: 20px;
+  margin-bottom: 0px;
 }
 
-.nav:hover {
-  border: 1px solid #B0BDC6;
+.subLogo {
+  font-size: 14px;
 }
 
 .logoImg {
@@ -33,6 +34,10 @@ h1 {
   margin-top: 10px;
 }
 /* === aside === */
+
+.aside {
+  margin-left: 10px;
+}
 .nav-links {
   border: 2px solid #284B63;
   border-radius: 5px;
@@ -41,13 +46,23 @@ h1 {
   flex-direction: column;
   list-style-type: none;
   min-width: 150px;
-  margin: 0 5px 0 10px;
+  margin: 0 5px 10px 10px;
 }
 
 .nav {
   padding: 0px 7px 7px 7px;
   color: #284B63;
   text-decoration: none;
+  font-size: 20px;
+}
+
+.nav:hover {
+  border: 1px solid #B0BDC6;
+}
+
+.asideImg {
+  width: 150px;
+  height: 170px;
 }
 
 /* ==== main container === */

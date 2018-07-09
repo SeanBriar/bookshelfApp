@@ -14,11 +14,7 @@
       <div class='container'>
         <% for(let i = 0; i < books.length; i++) { %>
           <div class="card">
-            <img class='bookImg 'src="<%=books[i].img %>">
-            <div class="card-reveal">
-              <%=books[i].title%>
-              <p><a href='/books/<%=books[i].id%>'>More</a></p>
-            </div>
+            <a href='/books/<%=books[i].id%>'><img class='bookImg 'src="<%=books[i].img %>"></a>
           </div>
           <% } %>
 
