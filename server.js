@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/bookshelfapp';
 //methodOverride
 const methodOverride = require('method-override')
+const Books = require('./models/books.js')
 
 
 //Middleware - Body Parser
@@ -23,10 +24,19 @@ app.use(session({
 }));
 
 app.get('/', (req, res)=>{
-    res.render('index.ejs', {
-        currentUser: req.session.currentUser
-    });
+	Books.find({}, (err, allBooks) =>{
+    res.render('books/index.ejs',
+			{
+				  currentUser: req.session.currentUser,
+					books: allBooks
+	    }
+		);
+	})
 });
+
+app.get('/authtest', (req, res)=>{
+	res.send(req.session)
+})
 
 app.get('/app', (req, res)=>{
     if(req.session.currentUser){

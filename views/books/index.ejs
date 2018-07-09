@@ -19,6 +19,13 @@
           <% } %>
 
         </div> <!-- closing container -->
+        <div class='logoutBtn'>
+          <% if(currentUser) { %>
+            <form action="/sessions?_method=DELETE" method="POST">
+              <input type="submit" value="Logout"/>
+            </form>
+            <% } %>
+        </div>
     </div>  <!-- closing main -->
     <!-- footer partial ? -->
   </body>

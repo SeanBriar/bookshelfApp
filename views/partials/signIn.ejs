@@ -1,9 +1,14 @@
 <div class='signOnNav'>
   <div class='welcome'>
-    Welcome!
+    <% if(currentUser) { %>
+          Welcome <%=currentUser.username%>!
+          <% } else { %>
+            Welcome!
+          <% } %>
   </div>
   <div class='signOnLinks'>
     <a class='create' href='/users/new'>Create User</a>
     <a class='signIn' href='/sessions/new'>Sign In</a>
+    
   </div>
 </div>

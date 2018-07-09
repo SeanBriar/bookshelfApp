@@ -162,10 +162,11 @@ form {
 .welcome {
   font-size: 20px;
   padding: 10px;
+  padding-left: 20px;
 }
 
 .signOnLinks {
-  padding: 10px 10px 0 0;
+  padding: 10px 20px 0 0;
   display: table-cell;
   vertical-align:middle;
 }
