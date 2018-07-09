@@ -2,6 +2,7 @@
 const express = require('express')
 const router = express.Router()
 const Books = require('../models/books.js')
+const session = require('express-session');
 
 
 
@@ -52,12 +53,6 @@ router.get('/books/:id', (req, res)=>{
   })
 })
 
-// Edit   : GET    '/books/:id/edit' 5/7
-router.get('/books/:id/edit', (req, res)=>{
-  Books.findById(req.params.id, (err, foundBook)=>{
-    res.render('books/edit.ejs', {books: foundBook})
-  })
-})
 
 // Update : PUT    '/books/:id'      6/7
 // the second part to 'edit' - needed to submit changes to database
@@ -75,5 +70,11 @@ router.delete('/books/:id', (req, res)=>{
   })
 })
 
+// Edit   : GET    '/books/:id/edit' 5/7
+router.get('/books/:id/edit', (req, res)=>{
+  Books.findById(req.params.id, (err, foundBook)=>{
+    res.render('books/edit.ejs', {books: foundBook})
+  })
+})
 
 module.exports = router

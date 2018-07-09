@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <% include ../partials/head.ejs %>
+</head>
+<body>
+  <% include ../partials/nav.ejs %>
+  <div class="main">
+    <div class='aside'>
+      <% include ../partials/aside.ejs %>
+    </div>
+
+    <div class='container'>
+      <div class="card">
+        <h1>Sign In</h1>
+          <form action="/books/sessions" method="POST">
+            <input type="text" name="username" placeholder="username">
+            <input type="password" name="password" />
+            <input type="submit" value="Log In" />
+          </form>
+        </div>
+    </div>
+  </div>
+  <!-- footer partial -->
+</body>
+</html>

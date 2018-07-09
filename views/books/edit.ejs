@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <% include ../partials/head.ejs %>
-    <title>Edit a Book Entry</title>
+    <meta charset="utf-8">
+    <title>bookshelf.</title>
+    <!-- skeleton -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.css">
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- main.css -->
+    <link rel="stylesheet" type='text/css' href="../../css/main.css">
   </head>
   <body>
-  <% include ../partials/nav.ejs %>
-  <div class='container'>
-    <% include ../partials/aside.ejs %>
-    <h4>Edit a Book Entry</h4>
-    <form action='/books/<%=books.id%>?_method=PUT' method='POST'>
-      Title: <input type='text' name='title' value='<%=books.title%>'><br />
-      Author: <input type='text' name='author' value='<%=books.author%>'><br />
-      Book Cover Image: <input type='text' name='img' value='<%=books.img%>'><br />
-      Synopsis: <input type='text' name='synopsis' value='<%=books.synopsis%>'><br />
-      <button>Submit Changes</button>
-    </form>
-  </div>
+    <% include ../partials/nav.ejs %>
+    <!-- sign on nav bar -->
+    <% include ../partials/signIn.ejs %>
+    <div class='main'>
+      <div class='aside'>
+        <% include ../partials/aside.ejs %>
+      </div>
+      <div class='container'>
+        <div class='card'>
+          <h4>Edit a Book Entry</h4>
+          <form action='/books/<%=books.id%>?_method=PUT' method='POST'>
+            Title: <input type='text' name='title' value='<%=books.title%>'><br />
+            Author: <input type='text' name='author' value='<%=books.author%>'><br />
+            Book Cover Image: <input type='text' name='img' value='<%=books.img%>'><br />
+            Synopsis: <input type='text' name='synopsis' value='<%=books.synopsis%>'><br />
+            <button>Submit Changes</button>
+          </form>
+        </div>
+      </div> <!-- closing container -->
+    </div> <!-- closing main -->
   </body>
 </html>

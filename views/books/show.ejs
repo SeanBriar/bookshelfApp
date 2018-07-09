@@ -6,6 +6,8 @@
   <body>
     <!-- nav partial -->
     <% include ../partials/nav.ejs %>
+    <!-- sign on nav bar -->
+    <% include ../partials/signIn.ejs %>
     <!-- main div -->
     <div class='main'>
       <div class="aside">
@@ -25,11 +27,11 @@
             <a href="/books/<%=books.id; %>/edit"><button>Edit</button></a>
             <div class='purchaseIcons'>
               <!-- amazon icon -->
-              <a class='purchaseBtn' style='text-decoration:none' href='#'><i class="fa fa-amazon" style="font-size:36px;color:#284B63"></i></a>
+              <a class='purchaseBtn' style='text-decoration:none' href='https://www.amazon.com/'><i class="fa fa-amazon" style="font-size:36px;color:#284B63"></i></a>
               <!-- google icon -->
-              <a class='purchaseBtn' style='text-decoration:none' href='#'><i class="fa fa-google" style="font-size:36px;color:#284B63"></i></a>
+              <a class='purchaseBtn' style='text-decoration:none' href='https://play.google.com/store/books'><i class="fa fa-google" style="font-size:36px;color:#284B63"></i></a>
               <!-- apple icon -->
-              <a class='purchaseBtn' style='text-decoration:none' href='#'><i class="fa fa-apple" style="font-size:36px;color:#284B63"></i></a>
+              <a class='purchaseBtn' style='text-decoration:none' href='https://itunes.apple.com/us/genre/books/id38'><i class="fa fa-apple" style="font-size:36px;color:#284B63"></i></a>
             </div>
           </div>
         </div>

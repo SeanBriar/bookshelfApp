@@ -8,11 +8,39 @@ const mongoUri =  process.env.MONGODB_URI || 'mongodb://localhost:27017/bookshel
 //methodOverride
 const methodOverride = require('method-override')
 
+
 //Middleware - Body Parser
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({extended:false}));
 app.use(express.static('public'))
 app.use(methodOverride('_method'));
 
+//sessions
+const session = require('express-session');
+app.use(session({
+	  secret: "alpaclettes",
+	  resave: false,
+	  saveUninitialized: false
+}));
+
+app.get('/', (req, res)=>{
+    res.render('index.ejs', {
+        currentUser: req.session.currentUser
+    });
+});
+
+app.get('/app', (req, res)=>{
+    if(req.session.currentUser){
+        res.send('the main app');
+    } else {
+        res.redirect('/sessions/new');
+    }
+})
+
+const userController = require('./controllers/users.js')
+app.use('/users', userController);
+
+const sessionsController = require('./controllers/sessions.js');
+app.use('/sessions', sessionsController);
 
 // Use controllers/books.js
 const booksController = require('./controllers/books.js')
@@ -21,6 +49,7 @@ app.use(booksController)
 
 // localhost:3000  - this will reroute to `books`
 app.get('/', (req, res)=>{
+  console.log('reroute to books');
   res.redirect('/books')
   })
 
