@@ -5,12 +5,34 @@
   </head>
   <body>
     <% include ../partials/nav.ejs %>
-    <!-- sign on nav bar -->
-    <% include ../partials/signIn.ejs %>
+
+    <!-- Welcome div -->
+
+
     <div class="main">
       <div class='aside'>
         <% include ../partials/aside.ejs %>
-      </div>
+
+        <div class='welcome'>
+        <% if(currentUser) { %>
+          Welcome <i><%=currentUser.username%>!</i>
+          <% } else { %>
+            Welcome!
+            <% } %>
+        </div>
+      <div class='signOnLinks'>
+        <a href='/users/new'><input class='create' type="submit" value="Create User"/></a>
+        <% if (!currentUser) { %>
+          <a href='/sessions/new'><input class='signIn' type="submit" value="Sign In "/></a>
+          <% } else { %>
+            <form action="/sessions?_method=DELETE" method="POST">
+              <input type="submit" value="Logout"/>
+            </form>
+            <% } %>
+          </div>
+        </div>
+
+
       <div class='container'>
         <% for(let i = 0; i < books.length; i++) { %>
           <div class="card">
@@ -18,15 +40,8 @@
           </div>
           <% } %>
 
-        </div> <!-- closing container -->
-        <div class='logoutBtn'>
-          <% if(currentUser) { %>
-            <form action="/sessions?_method=DELETE" method="POST">
-              <input type="submit" value="Logout"/>
-            </form>
-            <% } %>
-        </div>
-    </div>  <!-- closing main -->
+      </div> <!-- closing container -->
+  </div><!-- closing main -->
     <!-- footer partial ? -->
   </body>
 </html>

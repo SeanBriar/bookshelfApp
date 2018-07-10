@@ -7,8 +7,15 @@
           <% } %>
   </div>
   <div class='signOnLinks'>
-    <a class='create' href='/users/new'>Create User</a>
-    <a class='signIn' href='/sessions/new'>Sign In</a>
-    
+    <a class='create' href='/users/new'><input type="submit" value="Create New User"/></a>
+    <% if (!currentUser) { %>
+      <a class='signIn' href='/sessions/new'><input type="submit" value="Sign In "/></a>
+    <% } else { %>
+          <form action="/sessions?_method=DELETE" method="POST">
+            <input type="submit" value="Logout"/>
+          </form>
+          <% } %>
+      </div>
+
   </div>
 </div>

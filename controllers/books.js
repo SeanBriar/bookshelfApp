@@ -23,8 +23,11 @@ const session = require('express-session');
 // Index  : GET    '/books'          1/7
 router.get('/books', (req, res)=>{
   Books.find({}, (err, allBooks) =>{
-    // res.send(allBooks)
-    res.render('books/index.ejs', {books: allBooks})
+    res.render('books/index.ejs',
+    {
+      currentUser: req.session.currentUser,
+      books: allBooks
+    })
   })
 })
 

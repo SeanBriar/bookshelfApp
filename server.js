@@ -23,16 +23,7 @@ app.use(session({
 	  saveUninitialized: false
 }));
 
-app.get('/', (req, res)=>{
-	Books.find({}, (err, allBooks) =>{
-    res.render('books/index.ejs',
-			{
-				  currentUser: req.session.currentUser,
-					books: allBooks
-	    }
-		);
-	})
-});
+
 
 app.get('/authtest', (req, res)=>{
 	res.send(req.session)
@@ -58,10 +49,10 @@ app.use(booksController)
 
 
 // localhost:3000  - this will reroute to `books`
-app.get('/', (req, res)=>{
-  console.log('reroute to books');
-  res.redirect('/books')
-  })
+// app.get('/', (req, res)=>{
+//   console.log('reroute to books');
+//   res.redirect('/books')
+//   })
 
 
 //connect to mongoose
