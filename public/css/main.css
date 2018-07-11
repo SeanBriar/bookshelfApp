@@ -199,6 +199,7 @@ form {
 
 /* === footer === */
 .signaure{
-  font-size: 10px;
+  font-size: 12px;
   color: rgb(55, 60, 71);
+  margin-left: 20px;
 }
