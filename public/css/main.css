@@ -76,6 +76,34 @@ h1 {
   height: 170px;
 }
 
+
+/* === User Section === */
+.userSection {
+  border: 2px solid #284B63;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  list-style-type: none;
+  min-width: 160px;
+  max-width: 160px;
+  margin: 0 5px 10px 10px;
+}
+
+.signOnLinks {
+  padding: 10px 20px 0 0;
+  display: table-cell;
+  vertical-align:middle;
+}
+
+.signIn {
+  margin-left: 20px;
+}
+
+.signOnLinks {
+  font-size: 12px;
+}
+
 /* ==== main container === */
 .welcome {
   font-size: 20px;
@@ -164,17 +192,4 @@ form {
 
 .purchaseBtn {
   margin: 0 20px 0 10px;
-}
-
-
-/* === Sign in Links === */
-
-.signOnLinks {
-  padding: 10px 20px 0 0;
-  display: table-cell;
-  vertical-align:middle;
-}
-
-.signIn {
-  margin-left: 20px;
 }

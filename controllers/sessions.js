@@ -8,17 +8,18 @@ router.get('/new', (req, res)=>{
     res.render('sessions/newSession.ejs');
 })
 
-router.delete('/books', (req, res)=>{
+router.delete('/logout', (req, res)=>{
     req.session.destroy(() => {
         res.redirect('/books')
     })
 });
 
-router.post('/books', (req, res)=>{
+router.post('/login', (req, res)=>{
     User.findOne({username:req.body.username}, (err, foundUser)=>{
+      console.log('whatever')
         if(bcrypt.compareSync(req.body.password, foundUser.password)){
             req.session.currentUser = foundUser;
-            res.redirect('/');
+            res.redirect('/books');
         } else {
             res.send('wrong password');
         }

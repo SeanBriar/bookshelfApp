@@ -22,6 +22,8 @@ const session = require('express-session');
 
 // Index  : GET    '/books'          1/7
 router.get('/books', (req, res)=>{
+  console.log('are you here?');
+  console.log(req.session.currentUser);
   Books.find({}, (err, allBooks) =>{
     res.render('books/index.ejs',
     {
@@ -39,6 +41,7 @@ router.get('/books/new', (req, res)=>{
 
 // Create : POST   '/books'          4/7
 router.post('/books', (req, res)=>{
+  console.log('is it going here?');
   Books.create(req.body, (err, createdBook)=>{
     res.redirect('/books')
   })
