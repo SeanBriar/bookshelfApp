@@ -11,7 +11,7 @@ router.post('/', (req, res)=>{
   console.log('whoomp');
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
     User.create(req.body, (err, createdUser)=>{
-        res.redirect('/');
+        res.redirect('/books');
     });
 });
 
