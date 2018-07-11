@@ -19,20 +19,21 @@
               <% } else { %>
                 Welcome!
                 <% } %>
-              </div>
-              <div class='signOnLinks'>
-                <a href='/users/new'><input class='create' type="submit" value="Create User"/></a>
+          </div>
+          <div class='signOnLinks'>
+              <% if (!currentUser) { %>
+            <a href='/users/new'><input class='create' type="submit" value="Create User"/></a>
+                <% } %>
                 <% if (!currentUser) { %>
-                  <a href='/sessions/new'><input class='signIn' type="submit" value="Sign In "/></a>
-                  <% } else { %>
-                    <form action="/sessions/logout?_method=DELETE" method="POST">
-                      <input type="submit" value="Logout"/>
-                    </form>
-                    <% } %>
-                  </div>
-                </div>
-
+            <a href='/sessions/new'><input class='signIn' type="submit" value="Sign In "/></a>
+                <% } else { %>
+            <form class='logoutBtn' action="/sessions/logout?_method=DELETE" method="POST">
+              <input type="submit" value="Logout"/>
+            </form>
+                <% } %>
+          </div>
         </div>
+      </div>
 
 
       <div class='container'>

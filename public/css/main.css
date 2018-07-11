@@ -104,6 +104,9 @@ h1 {
   font-size: 12px;
 }
 
+.logoutBtn {
+  text-align: center;
+}
 /* ==== main container === */
 .welcome {
   font-size: 20px;
