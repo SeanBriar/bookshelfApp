@@ -198,11 +198,7 @@ form {
 }
 
 /* === footer === */
-.footer {
-  text-align: center;
-  width: 100%;
-  height: 30px;
-  margin: 0;
-  color: #B0BDC6;
-  background-color: rgb(55, 60, 71);
+.signaure{
+  font-size: 10px;
+  color: rgb(55, 60, 71);
 }
