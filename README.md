@@ -1,6 +1,6 @@
 # bookshelf.
 
-Check it out [here](https://still-spire-94893.herokuapp.com/) 
+Check it out [here](https://still-spire-94893.herokuapp.com/books) 
 
 **About**
 
