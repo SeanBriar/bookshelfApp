@@ -13,6 +13,7 @@ To improve this project, I would like to add categories that the user add books 
 * HTML
 * CSS
 * Node.js
+* AngularJS
 * Express
 * MongoDB/Mongoose
 * Heroku
